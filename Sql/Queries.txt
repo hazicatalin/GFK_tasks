@@ -1,0 +1,3 @@
+1. SELECT p.First_Name, p.Last_Name, v.quality, p.Locatie, COUNT(v.ID) AS Total FROM persons p JOIN Votes v ON p.ID = v.chosen_person WHERE v.valid = 1 GROUP BY p.First_Name, p.Last_Name, p.Locatie;
+
+2. SELECT p.Locatie AS Country, COUNT(v.ID) AS Total FROM persons p LEFT JOIN Votes v ON p.ID = v.chosen_person AND v.valid = 1 GROUP BY p.Locatie;

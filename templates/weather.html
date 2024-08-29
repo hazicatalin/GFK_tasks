@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast for {{ city }}</title>
+</head>
+<body>
+    <h1>Weather Forecast for {{ city }}</h1>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Max Temp (°C)</th>
+            <th>Min Temp (°C)</th>
+            <th>Precipitation (mm)</th>
+            <th>Sunrise</th>
+            <th>Sunset</th>
+        </tr>
+        {% for record in weather_records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.max_temp }}</td>
+            <td>{{ record.min_temp }}</td>
+            <td>{{ record.precip }}</td>
+            <td>{{ record.sunrise }}</td>
+            <td>{{ record.sunset }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
